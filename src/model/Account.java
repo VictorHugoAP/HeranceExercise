@@ -11,6 +11,8 @@ public class Account {
 	
 	public Account(Integer number, String holder) {
 		this.number = number;
+		this.holder = holder;
+		this.balance = 0.0;
 	}
 
 	public Integer getNumber() {
@@ -32,14 +34,23 @@ public class Account {
 	public Double getBalance() {
 		return balance;
 	}
-
 	
 	public void withDraw(Double amount) {
-		this.balance -= amount;
+		if(amount > balance) {
+			System.out.println("insufficient funds");
+		}else {
+			this.balance -= amount;			
+			System.out.println("successful withdrawal");
+		}
 	}
 	
 	public void deposit(Double amount) {
-		this.balance += amount;
+		if(amount <= 0.0) {
+			System.out.println("Invalid value");
+		}else {
+			this.balance += amount;
+			System.out.println("successful deposit, your new balance is " + this.balance);			
+		}
 	}
 	
 	@Override
