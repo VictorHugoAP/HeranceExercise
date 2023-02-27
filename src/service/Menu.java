@@ -21,6 +21,7 @@ public class Menu {
 						(readInteger("Type the account number: "), 
 						readString("Type the holder name: "));
 						System.out.println("Account created successfully");
+						System.out.println("Withdrawal fee for Default account is 4.00");
 						showDefaultAccountMenu(account);
 						break;
 						
@@ -29,6 +30,7 @@ public class Menu {
 						readString("Type the holder name: "), 
 						readDouble("Type the Loan limit: "));
 						System.out.println("Business Account created successfully");
+						System.out.println("Withdrawal fee for Business account is 6.00 and loan fee is 15.00");
 						showBusinessMenu(bAccount);
 						break;
 						

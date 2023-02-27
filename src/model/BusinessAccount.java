@@ -32,6 +32,17 @@ public class BusinessAccount extends Account {
 			System.out.println("Transaction denied! Value greater than the limit");
 		}
 	}
+	
+	@Override
+	public void withDraw(Double amount) {
+		Double taxBusinessAccount = 6.00;
+		if(amount + taxBusinessAccount > balance) {
+			System.out.println("insufficient funds! remember, fee for business account is " + taxBusinessAccount);
+		}else {
+			this.balance -= amount + taxBusinessAccount;			
+			System.out.println("successful withdrawal");
+		}
+	}
 
 	@Override
 	public String toString() {

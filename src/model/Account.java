@@ -36,10 +36,11 @@ public class Account {
 	}
 	
 	public void withDraw(Double amount) {
-		if(amount > balance) {
-			System.out.println("insufficient funds");
+		Double taxDefaultAccount = 4.00;
+		if(amount + taxDefaultAccount > balance) {
+			System.out.println("insufficient funds! remember, fee for business account is " + taxDefaultAccount);
 		}else {
-			this.balance -= amount;			
+			this.balance -= amount + taxDefaultAccount;			
 			System.out.println("successful withdrawal");
 		}
 	}
